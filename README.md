@@ -21,12 +21,13 @@ Address: 0x44
 Data Range: 0.0 : 99.9
 Units: 00.0 %RH
 
+# Example Data
 The example implementation uses the example 
-# Data
+
 humidity = 10.3     # limited to 3 digits
 pressure = 210.9     # limited to 4 digits
 temperature = -13.1  # limited to 3 digits
-
+# Identifying informaiton
 In addition to the data portion of the message, the message contains identification.  
 The first two characters are a callsign prefix that is not assigned to any country:
 For example "any letter other than A,B,F,G,I,K,M,N,W,R, + 1", "X + any number", E8, E9,J9, " letter O + any number" , T9, "U + any number"
