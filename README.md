@@ -1,7 +1,7 @@
 # Reference-Data-Encode-Decode
 
-This code in this reposititory contains a reference implementation of a wspr message that contains data.
-The reference implementation uses values of humidity, pressure and temperature that follow these rules:
+This code in this reposititory contains a reference Python implementations of two wspr messages that contains data.
+The first reference implementation (encode-decode) uses values of humidity, pressure and temperature that follow these rules:
 
 Pressure:
 Sensor: MS561101BA03-50
@@ -30,7 +30,18 @@ temperature = -13.1  # limited to 3 digits
 # Identifying informaiton
 In addition to the data portion of the message, the message contains identification.  
 The first two characters are a callsign prefix that is not assigned to any country:
-For example "any letter other than A,B,F,G,I,K,M,N,W,R, + 1", "X + any number", E8, E9,J9, " letter O + any number" , T9, "U + any number"
-Following the two letter prefix is a number between 0 and 9 which further identified the message.
+For example "any letter other than A,B,F,G,I,K,M,N,W,R, + 1", "X + any number", E8, E9,J9, " letter O + any number" ,T1, T9, "U + any number"
+Following the two letter prefix is a number between 0 and 9 which can be used to further identify the balloon e.g. up to 10 balloons with the prefix of B1 - B10, B12, B13, etc
 
 The transmission of this message must be combined with a standard wspr message with a valid callsign.  Together they comprise on identified transmission. 
+
+The second reference implementation (speed-direction) will encode and decode the following into a wspr message
+     Direction in degrees
+     Speed up to 150 kph
+     Extended precision for grid position 5 and 6
+     Fine altitude which will position the balloon altitude within +-30 m
+     A balloon designator of a value of 0-9 that is chosen to identify the balloon
+     A prefix of T9 which is not used by any country. There are many other prefixes
+     that can be used.
+Intended to be used in conjunction with wb8elk telemetry message
+
