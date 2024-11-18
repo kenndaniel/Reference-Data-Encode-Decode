@@ -34,7 +34,7 @@ For example "any letter other than A,B,F,G,I,K,M,N,W,R, + 1", "X + any number", 
 Following the two letter prefix is a number between 0 and 9 which can be used to further identify the balloon e.g. up to 10 balloons with the prefix of B1 - B10, B12, B13, etc
 
 The transmission of this message must be combined with a standard wspr message with a valid callsign.  Together they comprise on identified transmission. 
-
+# Speed and direction
 The second reference implementation (speed-direction) will encode and decode the following into a wspr message
      Direction in degrees
      Speed up to 150 kph
